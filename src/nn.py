@@ -186,11 +186,11 @@ class NeuralNetwork:
                 epoch_cost += self.train_step(mini_batch_x, mini_batch_y, learning_rate, step) / mini_batch_size
                 print("\rProgress {:1.1%}".format(i / num_mini_batches), end="")
 
-            print(f"\rCost after epoch {e+1}: {epoch_cost}")
+            print(f"\nCost after epoch {e+1}: {epoch_cost}")
 
-            print("Computing accuracy on validation set...", end="")
+            print("Computing accuracy on validation set...")
             accuracy = np.sum(np.argmax(self.predict(x_val), axis=1) == y_val) / x_val.shape[0]
-            print(f"\rAccuracy on validation set: {accuracy}")
+            print(f"Accuracy on validation set: {accuracy}")
 
         print("Finished training")
 
